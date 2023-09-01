@@ -213,7 +213,7 @@ void DisplayLinkedList(Node *head)
 
 int main()
 {
-    Node *head=NULL;
+    Node *head = NULL;
     while(1)
     {
         cout << "\n----------- Singly Linked List -----------" << endl;
