@@ -1,3 +1,9 @@
+//You can identify a loop in a linked list using various algorithms, 
+//but one of the most commonly used and efficient algorithms is Floyd's Cycle Detection Algorithm, 
+//also known as the "tortoise and hare" algorithm. This algorithm uses two pointers,
+//one moving slow (tortoise) and the other moving fast (hare) through the linked list. 
+//If there is a loop in the linked list, the fast pointer will eventually catch up to the slow pointer.
+
 #include <iostream>
 using namespace std;
 class Node
