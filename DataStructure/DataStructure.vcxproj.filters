@@ -24,7 +24,7 @@
     <ClCompile Include="Queue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="FileName.cpp">
+    <ClCompile Include="HasCycleInSLL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
