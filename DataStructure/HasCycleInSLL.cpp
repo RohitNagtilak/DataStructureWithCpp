@@ -47,7 +47,7 @@ bool hasCycle(Node* head)
         // If the list is empty or has only one node, there can't be a loop.
         return false;
     }
-    
+
     Node* slow = head;
     Node* fast = head->next;
 
@@ -60,7 +60,7 @@ bool hasCycle(Node* head)
         }
         slow = slow->next;         // Move slow pointer one step
         fast = fast->next->next;   // Move fast pointer two steps
-    }   
+    }
     //  1   2   3   4   2
     //  s = 1 f = 2
     //  s = 2 f = 4
@@ -76,8 +76,8 @@ int main()
     temphead->next->next = new Node(3);                 // 1 -> 2 -> 3
     temphead->next->next->next = new Node(4);           // 1 -> 2 -> 3 -> 4
     temphead->next->next->next->next = temphead->next;  // 1 -> 2 -> 3 -> 4 -
-                                                        //      |             |
-                                                        //       <------------
+    //      |             |
+    //       <------------
     if (hasCycle(temphead))
     {
         // DisplayLinkedList(temphead);
@@ -87,13 +87,13 @@ int main()
     {
         cout << "The linked list does not have a loop." << endl;
     }
-    
-  /*Node* temp = temphead;
-    while (temp != NULL)
-    {
-        Node* nextNode = temp->next;
-        delete temp;
-        temp = nextNode;
-    }*/
+
+    /*Node* temp = temphead;
+      while (temp != NULL)
+      {
+          Node* nextNode = temp->next;
+          delete temp;
+          temp = nextNode;
+      }*/
     return 0;
 }
