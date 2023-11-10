@@ -183,12 +183,46 @@ void Display(Node* head)
 	}
 }
 
+//      10 -> 20  ->  30  ->  40  ->  50  ->NULL
+//NULL  |     |
+// |    |     |
+//prev curr  nextPtr
+
+Node* Reverse(Node*& head)
+{
+	Node* prev = NULL;
+	Node* curr = head;
+	Node* nextPtr;
+	while (curr != NULL)
+	{
+		nextPtr = curr->next;
+		curr->next = prev;
+
+		prev = curr;
+		curr = nextPtr;
+	}
+	return prev;
+}
+
+
+Node* ReverseRecursive(Node*& head)
+{
+	if (head == NULL || head->next == NULL)
+		return head;
+
+	Node* newHead = ReverseRecursive(head->next);
+	head->next->next = head;
+	head->next = NULL;
+
+	return newHead;
+}
+
 int main()
 {
 	Node* head = NULL;
 	while (1)
 	{
-		cout << "\n 1. Create List\n 2. Insert At Start\n 3. Insert At End\n 4. Insert At Middle\n 5. Delete from start \n 6. Delete from end \n 7. Delete from middle \n 8. Display";
+		cout << "\n 1.  Create List\n 2.  Insert At Start\n 3.  Insert At End\n 4.  Insert At Middle\n 5.  Delete from start \n 6.  Delete from end \n 7.  Delete from middle \n 8.  Display \n 9.  Reverse \n 10. ReverseRecursive \n";
 		int ch;
 		cout << "\nEnter your choice:";
 		cin >> ch;
@@ -217,6 +251,12 @@ int main()
 			break;
 		case 8:
 			Display(head);
+			break;
+		case 9:
+			head = Reverse(head);
+			break;
+		case 10:
+			head = ReverseRecursive(head);
 			break;
 		default:
 			break;
